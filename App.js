@@ -1,103 +1,103 @@
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                                              // ujian no 1 //
 
-import React, { Component } from 'react';
-import { Container, Header, Left, Body, Right, Title, Content, Form, Item, Input, Label, Button } from 'native-base';
-import { Text, View } from 'react-native'
+// import React, { Component } from 'react';
+// import { Container, Header, Left, Body, Right, Title, Content, Form, Item, Input, Label, Button } from 'native-base';
+// import { Text, View } from 'react-native'
 
-class	App	extends	Component	{
-    constructor (props) {
-      super(props);
+// class	App	extends	Component	{
+//     constructor (props) {
+//       super(props);
 
-      this.state = {
-        weight: '',
-        height: '',
-        sum: ''
-      };
-    }
+//       this.state = {
+//         weight: '',
+//         height: '',
+//         sum: ''
+//       };
+//     }
 
-    calculateSum = () => {
-      const { weight, height } = this.state;
+//     calculateSum = () => {
+//       const { weight, height } = this.state;
 
-      this.setState({
-        sum: (weight * 10000) / Math.pow((height),2)
-      });
-    }
+//       this.setState({
+//         sum: (weight * 10000) / Math.pow((height),2)
+//       });
+//     }
     
-    render () {
-      var result;
-      if(this.state.sum < 18.5){
-        result = 'Berat badan anda kurang'
-      }
-      else if(this.state.sum>=18.5 && this.state.sum<=24.9){
-        result = 'Berat badan ideal'
-      }
-      else if(this.state.sum>=25.0 && this.state.sum<=29.9){
-        result = 'Berat badan berlebih'
-      }
-      else if(this.state.sum>=30.0 && this.state.sum<=39.9){
-        result = 'Berat badan sangat berlebih'
-      }
-      else if(this.state.sum>=39.9){
-        result = 'Obesitas'
-      }
-      else{
-        result = 'Error!'
-      }
+//     render () {
+//       var result;
+//       if(this.state.sum < 18.5){
+//         result = 'Berat badan anda kurang'
+//       }
+//       else if(this.state.sum>=18.5 && this.state.sum<=24.9){
+//         result = 'Berat badan ideal'
+//       }
+//       else if(this.state.sum>=25.0 && this.state.sum<=29.9){
+//         result = 'Berat badan berlebih'
+//       }
+//       else if(this.state.sum>=30.0 && this.state.sum<=39.9){
+//         result = 'Berat badan sangat berlebih'
+//       }
+//       else if(this.state.sum>=39.9){
+//         result = 'Obesitas'
+//       }
+//       else{
+//         result = 'Error!'
+//       }
 
-      return (
-        <Container>
-          <Header>
-            <Body>
-              <Title>Indeks Massa Tubuh</Title>
-            </Body>
-          </Header>
-          <Content>
-            <Form>
-              <Item floatingLabel>
-                <Label>Massa (kg)</Label>
-                <Input 
-                  onChangeText={(weight) => this.setState({weight})}
-                />
-              </Item>
-              <Item floatingLabel last>
-                <Label>Tinggi (cm)</Label>
-                <Input 
-                  onChangeText={(height) => this.setState({height})}
-                />
-              </Item>
-            </Form>
-            <Button block info onPress={this.calculateSum}>
-              <Text style={{ fontWeight: 'bold', fontSize: 15 }}>Hitung IMT</Text>
-            </Button>
-            {
-              this.state.sum ?
-              <View style={{ paddingVertical: 10, alignItems: 'center' }}>
-                <View style={{ paddingVertical: 10, alignItems: 'center' }}>
-                  <Text>Massa Tubuh:</Text>
-                  <Text style={{ fontWeight: 'bold', fontSize: 20 }}>{this.state.weight}</Text>
-                </View>
-                <View style={{ paddingVertical: 10, alignItems: 'center' }}>
-                  <Text>Tinggi Badan:</Text>
-                  <Text style={{ fontWeight: 'bold', fontSize: 20 }}>{this.state.height}</Text>
-                </View>
-                <View style={{ paddingVertical: 10, alignItems: 'center' }}>
-                  <Text>Indeks Massa Tubuh:</Text>
-                  <Text style={{ fontWeight: 'bold', fontSize: 20 }}>{this.state.sum}</Text>
-                </View>
-                <View style={{ paddingVertical: 10, alignItems: 'center' }}>
-                  <Text>Diagnosa:</Text>
-                  <Text style={{ fontWeight: 'bold', fontSize: 20 }}>{result}</Text>
-                </View>
-              </View>
-              : null
-            }
-          </Content>
-        </Container>
-      );
-    }
-  }
-    export default	App;
+//       return (
+//         <Container>
+//           <Header>
+//             <Body>
+//               <Title>Indeks Massa Tubuh</Title>
+//             </Body>
+//           </Header>
+//           <Content>
+//             <Form>
+//               <Item floatingLabel>
+//                 <Label>Massa (kg)</Label>
+//                 <Input 
+//                   onChangeText={(weight) => this.setState({weight})}
+//                 />
+//               </Item>
+//               <Item floatingLabel last>
+//                 <Label>Tinggi (cm)</Label>
+//                 <Input 
+//                   onChangeText={(height) => this.setState({height})}
+//                 />
+//               </Item>
+//             </Form>
+//             <Button block info onPress={this.calculateSum}>
+//               <Text style={{ fontWeight: 'bold', fontSize: 15 }}>Hitung IMT</Text>
+//             </Button>
+//             {
+//               this.state.sum ?
+//               <View style={{ paddingVertical: 10, alignItems: 'center' }}>
+//                 <View style={{ paddingVertical: 10, alignItems: 'center' }}>
+//                   <Text>Massa Tubuh:</Text>
+//                   <Text style={{ fontWeight: 'bold', fontSize: 20 }}>{this.state.weight}</Text>
+//                 </View>
+//                 <View style={{ paddingVertical: 10, alignItems: 'center' }}>
+//                   <Text>Tinggi Badan:</Text>
+//                   <Text style={{ fontWeight: 'bold', fontSize: 20 }}>{this.state.height}</Text>
+//                 </View>
+//                 <View style={{ paddingVertical: 10, alignItems: 'center' }}>
+//                   <Text>Indeks Massa Tubuh:</Text>
+//                   <Text style={{ fontWeight: 'bold', fontSize: 20 }}>{this.state.sum}</Text>
+//                 </View>
+//                 <View style={{ paddingVertical: 10, alignItems: 'center' }}>
+//                   <Text>Diagnosa:</Text>
+//                   <Text style={{ fontWeight: 'bold', fontSize: 20 }}>{result}</Text>
+//                 </View>
+//               </View>
+//               : null
+//             }
+//           </Content>
+//         </Container>
+//       );
+//     }
+//   }
+//     export default	App;
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                                                   // ujian no 2 //
@@ -119,7 +119,7 @@ class App extends Component {
       console.log(this.state.search)
       var uri = `https://developers.zomato.com/api/v2.1/search?q=${this.state.search}`;
       var config = {
-        headers:{'user-key':'5664240ace1b2c209e6d5127bbe402f3'}
+        headers:{'user-key':'0a42718b6bf8f1a52bf3546ef8e44080'}
     }
       axios.get(uri, config).then((ambilData)=>{
         this.setState({
